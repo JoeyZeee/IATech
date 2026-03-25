@@ -1,0 +1,3 @@
+[submodule "the-privacy-playbook"]
+	path = the-privacy-playbook
+	url = https://github.com/alex-cantor/the-privacy-playbook
