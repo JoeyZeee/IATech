@@ -1,0 +1,679 @@
+{
+  "categories": [
+    {
+      "title": "Account Security Foundations",
+      "actions": [
+        {
+          "title": "Enable Two-Factor Authentication",
+          "level": "beginner",
+          "why": "Even if an attacker obtains your password, they cannot access your account without your second factor.",
+          "steps": {
+            "google": [
+              "Go to https://myaccount.google.com",
+              "Open 'Security' tab",
+              "Click '2-Step Verification'",
+              "Click 'Get Started'",
+              "Choose preferred verification method"
+            ],
+            "facebook": [
+              "Open Settings & Privacy",
+              "Go to 'Security and Login'",
+              "Find 'Two-Factor Authentication'",
+              "Click 'Setup'",
+              "Enable authentication app method"
+            ]
+          }
+        },
+        {
+          "title": "Use a Password Manager",
+          "level": "beginner",
+          "why": "A password manager generates and stores secure passwords for each of your services.",
+          "steps": {
+            "windows": [
+              "Download Bitwarden",
+              "Open the installer",
+              "Create a vault",
+              "Store master password securely",
+              "Save credentials"
+            ],
+            "ios": [
+              "Install Bitwarden",
+              "Open Settings",
+              "Go to Passwords",
+              "Select AutoFill Passwords",
+              "Enable Bitwarden"
+            ]
+          }
+        },
+        {
+          "title": "Review Account Recovery Methods",
+          "level": "beginner",
+          "why": "Incorrect recovery data can lock you out of your accounts.",
+          "steps": {
+            "google": [
+              "Visit https://myaccount.google.com/security",
+              "Find 'Ways we can verify it's you'",
+              "Update recovery phone",
+              "Update recovery email"
+            ]
+          }
+        },
+        {
+          "title": "Review Third-Party App Access",
+          "level": "intermediate",
+          "why": "Apps with excessive permissions can leak account data.",
+          "steps": {
+            "google": [
+              "Go to https://myaccount.google.com/permissions",
+              "Review connected apps",
+              "Remove apps you don't trust"
+            ],
+            "facebook": [
+              "Go to Settings",
+              "Open 'Apps and Websites'",
+              "Remove old or unused ones"
+            ]
+          }
+        },
+        {
+          "title": "Enable Account Login Alerts",
+          "level": "intermediate",
+          "why": "Detect unauthorized login attempts early.",
+          "steps": {
+            "facebook": [
+              "Go to Settings",
+              "Open 'Security and Login'",
+              "Enable login alerts via email"
+            ],
+            "google": [
+              "Visit https://myaccount.google.com/security-checkup",
+              "Enable suspicious activity alerts"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Device Hardening",
+      "actions": [
+        {
+          "title": "Enable Full Disk Encryption",
+          "level": "intermediate",
+          "why": "Data remains inaccessible without your password even if the device is stolen.",
+          "steps": {
+            "windows": [
+              "Open Start",
+              "Search 'BitLocker'",
+              "Turn on BitLocker for drive",
+              "Save recovery key"
+            ],
+            "macos": [
+              "Open System Settings",
+              "Open 'Privacy & Security'",
+              "Enable FileVault",
+              "Store recovery key securely"
+            ]
+          }
+        },
+        {
+          "title": "Update Operating System",
+          "level": "beginner",
+          "why": "Updates contain critical security patches.",
+          "steps": {
+            "windows": [
+              "Open Start",
+              "Search 'Update'",
+              "Click 'Check for updates'"
+            ],
+            "macos": [
+              "Open System Settings",
+              "Go to General",
+              "Click 'Software Update'"
+            ],
+            "linux": [
+              "Open terminal",
+              "Run 'sudo apt update && sudo apt upgrade -y'"
+            ]
+          }
+        },
+        {
+          "title": "Disable Unnecessary Background Apps",
+          "level": "beginner",
+          "why": "Reduces data collection and improves performance.",
+          "steps": {
+            "android": [
+              "Open Settings",
+              "Go to Apps",
+              "Select an app",
+              "Disable unnecessary permissions"
+            ]
+          }
+        },
+        {
+          "title": "Disable Location History",
+          "level": "intermediate",
+          "why": "Stops background geo-tracking.",
+          "steps": {
+            "google": [
+              "Visit https://myactivity.google.com",
+              "Select 'Location History'",
+              "Disable location tracking"
+            ],
+            "ios": [
+              "Open Settings",
+              "Tap 'Privacy'",
+              "Tap 'Location Services'",
+              "Disable 'Significant Locations'"
+            ]
+          }
+        },
+        {
+          "title": "Set Automatic Lock Timeout",
+          "level": "beginner",
+          "why": "Protects device if left unattended.",
+          "steps": {
+            "android": [
+              "Open Settings",
+              "Go to Display",
+              "Tap 'Screen timeout'",
+              "Set to 30 seconds"
+            ],
+            "ios": [
+              "Open Settings",
+              "Tap Display & Brightness",
+              "Tap Auto-Lock",
+              "Select 1 minute"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Network Security",
+      "actions": [
+        {
+          "title": "Use a VPN on Public Wi-Fi",
+          "level": "beginner",
+          "why": "Encrypts your traffic on untrusted networks.",
+          "steps": {
+            "windows": [
+              "Install Mullvad",
+              "Open application",
+              "Click Connect"
+            ],
+            "android": [
+              "Install Mullvad",
+              "Tap Connect"
+            ]
+          }
+        },
+        {
+          "title": "Enable DNS-over-HTTPS",
+          "level": "intermediate",
+          "why": "Hides DNS lookups from ISP.",
+          "steps": {
+            "chrome": [
+              "Open Settings",
+              "Search 'DNS'",
+              "Enable secure DNS",
+              "Choose Cloudflare"
+            ],
+            "firefox": [
+              "Open about:preferences",
+              "Enable DNS-over-HTTPS"
+            ]
+          }
+        },
+        {
+          "title": "Secure Home Router",
+          "level": "advanced",
+          "why": "Router vulnerabilities expose entire network.",
+          "steps": {
+            "router": [
+              "Log in to admin panel",
+              "Change admin password",
+              "Enable WPA3",
+              "Disable WPS",
+              "Update firmware"
+            ]
+          }
+        },
+        {
+          "title": "Disable Auto-Join Public Wi-Fi",
+          "level": "beginner",
+          "why": "Stops device from connecting to malicious hotspots.",
+          "steps": {
+            "ios": [
+              "Open Wi-Fi settings",
+              "Tap 'i' icon",
+              "Disable Auto-Join"
+            ]
+          }
+        },
+        {
+          "title": "Scan for Rogue Access Points",
+          "level": "advanced",
+          "why": "Detects Wi-Fi spoofing attacks.",
+          "steps": {
+            "linux": [
+              "Install aircrack-ng",
+              "Run 'sudo airodump-ng wlan0'",
+              "Detect duplicate SSIDs"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Browser Privacy",
+      "actions": [
+        {
+          "title": "Install uBlock Origin",
+          "level": "beginner",
+          "why": "Blocks ads, trackers, and malicious scripts.",
+          "steps": {
+            "chrome": [
+              "Open Web Store",
+              "Search uBlock Origin",
+              "Install extension"
+            ],
+            "firefox": [
+              "Open Add-ons",
+              "Install uBlock Origin"
+            ]
+          }
+        },
+        {
+          "title": "Disable Third-Party Cookies",
+          "level": "beginner",
+          "why": "Stops cross-site tracking.",
+          "steps": {
+            "chrome": [
+              "Open Settings",
+              "Block third-party cookies"
+            ],
+            "firefox": [
+              "Set Enhanced Tracking Protection to Strict"
+            ]
+          }
+        },
+        {
+          "title": "Enable HTTPS-Only Mode",
+          "level": "intermediate",
+          "why": "Forces secure connections.",
+          "steps": {
+            "firefox": [
+              "Open Settings",
+              "Enable HTTPS-only mode"
+            ]
+          }
+        },
+        {
+          "title": "Auto-Clear Data on Exit",
+          "level": "intermediate",
+          "why": "Erases browsing history automatically.",
+          "steps": {
+            "firefox": [
+              "Open Settings",
+              "Enable Clear on Close for history"
+            ]
+          }
+        },
+        {
+          "title": "Restrict Browser Permissions",
+          "level": "advanced",
+          "why": "Websites abuse permissions to fingerprint you.",
+          "steps": {
+            "chrome": [
+              "Go to chrome://settings/content",
+              "Set camera/mic/location to 'Ask'"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Secure Communication",
+      "actions": [
+        {
+          "title": "Install Signal",
+          "level": "beginner",
+          "why": "Provides end-to-end encrypted messaging.",
+          "steps": {
+            "ios": [
+              "Install Signal from App Store",
+              "Verify number",
+              "Enable registration lock"
+            ],
+            "android": [
+              "Install Signal",
+              "Verify number"
+            ]
+          }
+        },
+        {
+          "title": "Enable Disappearing Messages",
+          "level": "intermediate",
+          "why": "Reduces stored metadata exposure.",
+          "steps": {
+            "signal": [
+              "Open chat",
+              "Tap conversation details",
+              "Enable disappearing messages"
+            ]
+          }
+        },
+        {
+          "title": "Verify Safety Numbers",
+          "level": "advanced",
+          "why": "Prevents MiTM attacks.",
+          "steps": {
+            "signal": [
+              "Open chat",
+              "Tap name",
+              "View safety number",
+              "Verify with contact verbally"
+            ]
+          }
+        },
+        {
+          "title": "Use Encrypted Email",
+          "level": "intermediate",
+          "why": "E2EE protects sensitive communications.",
+          "steps": {
+            "protonmail": [
+              "Create ProtonMail account",
+              "Enable 2FA",
+              "Move sensitive conversations there"
+            ]
+          }
+        },
+        {
+          "title": "Block Non-Encrypted SMS",
+          "level": "advanced",
+          "why": "SMS is easily intercepted.",
+          "steps": {
+            "android": [
+              "Install Signal",
+              "Disable SMS fallback",
+              "Require encrypted chats only"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Social Media Privacy",
+      "actions": [
+        {
+          "title": "Make Accounts Private",
+          "level": "beginner",
+          "why": "Limits visibility of posts.",
+          "steps": {
+            "instagram": [
+              "Open Settings",
+              "Tap Privacy",
+              "Enable Private Account"
+            ]
+          }
+        },
+        {
+          "title": "Disable Location Tagging",
+          "level": "beginner",
+          "why": "Prevents geo-exposure.",
+          "steps": {
+            "instagram": [
+              "Disable location permissions in phone settings"
+            ]
+          }
+        },
+        {
+          "title": "Restrict Profile Visibility",
+          "level": "intermediate",
+          "why": "Stops strangers from viewing your info.",
+          "steps": {
+            "facebook": [
+              "Open 'Privacy'",
+              "Set profile visibility to 'Friends'"
+            ]
+          }
+        },
+        {
+          "title": "Limit Data Sharing",
+          "level": "intermediate",
+          "why": "Prevents Facebook from using your data for ads.",
+          "steps": {
+            "facebook": [
+              "Open Ad Settings",
+              "Turn off personalized ads"
+            ]
+          }
+        },
+        {
+          "title": "Review Tagged Photos",
+          "level": "advanced",
+          "why": "Tags reveal identity graphs.",
+          "steps": {
+            "facebook": [
+              "Open Timeline review",
+              "Enable tag review"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Cloud Security",
+      "actions": [
+        {
+          "title": "Enable Versioning",
+          "level": "beginner",
+          "why": "Allows recovery from accidental edits or ransomware.",
+          "steps": {
+            "onedrive": [
+              "Open OneDrive website",
+              "Open file version history",
+              "Enable file versioning"
+            ],
+            "google_drive": [
+              "Right-click file",
+              "Select Version History"
+            ]
+          }
+        },
+        {
+          "title": "Set Sharing Expiration Dates",
+          "level": "intermediate",
+          "why": "Prevents forgotten shared links from being exploited.",
+          "steps": {
+            "google_drive": [
+              "Open share dialog",
+              "Set link expiration date"
+            ]
+          }
+        },
+        {
+          "title": "Restrict File Sharing Permissions",
+          "level": "intermediate",
+          "why": "Prevents unauthorized file access.",
+          "steps": {
+            "google_drive": [
+              "Open share settings",
+              "Change 'Anyone with link' to specific people"
+            ]
+          }
+        },
+        {
+          "title": "Audit Cloud Activity Logs",
+          "level": "advanced",
+          "why": "Identifies suspicious access patterns.",
+          "steps": {
+            "google_drive": [
+              "Go to https://drive.google.com",
+              "Click 'Activity'",
+              "Review recent actions"
+            ]
+          }
+        },
+        {
+          "title": "Encrypt Files Before Upload",
+          "level": "advanced",
+          "why": "Prevents cloud providers from reading your data.",
+          "steps": {
+            "windows": [
+              "Install Cryptomator",
+              "Create encrypted vault",
+              "Store files inside vault"
+            ],
+            "macos": [
+              "Install Cryptomator",
+              "Create encrypted vault"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Application Security",
+      "actions": [
+        {
+          "title": "Review App Permissions",
+          "level": "beginner",
+          "why": "Prevents apps from harvesting data.",
+          "steps": {
+            "android": [
+              "Open Settings",
+              "Open Apps",
+              "Review permissions"
+            ]
+          }
+        },
+        {
+          "title": "Enable Automatic App Updates",
+          "level": "beginner",
+          "why": "Ensures security patches are applied.",
+          "steps": {
+            "android": [
+              "Open Play Store",
+              "Enable auto-update"
+            ],
+            "ios": [
+              "Open Settings",
+              "Enable automatic app updates"
+            ]
+          }
+        },
+        {
+          "title": "Uninstall Unused Apps",
+          "level": "intermediate",
+          "why": "Minimizes attack surface.",
+          "steps": {
+            "android": [
+              "Open Settings",
+              "Tap Apps",
+              "Tap unused app",
+              "Tap uninstall"
+            ]
+          }
+        },
+        {
+          "title": "Check App Signing Certificates",
+          "level": "advanced",
+          "why": "Detects tampered APKs.",
+          "steps": {
+            "linux": [
+              "Install apksigner",
+              "Run 'apksigner verify app.apk'"
+            ]
+          }
+        },
+        {
+          "title": "Block Installations From Unknown Sources",
+          "level": "intermediate",
+          "why": "Prevents malware installation.",
+          "steps": {
+            "android": [
+              "Open Settings",
+              "Open Security",
+              "Disable 'Install unknown apps'"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "title": "Operational Security",
+      "actions": [
+        {
+          "title": "Scrub Metadata From Images",
+          "level": "intermediate",
+          "why": "Removes GPS, device, and timestamp data.",
+          "steps": {
+            "windows": [
+              "Right-click photo",
+              "Open Properties",
+              "Click 'Remove Properties and Personal Information'",
+              "Choose remove all"
+            ],
+            "linux": [
+              "Install exiftool",
+              "Run 'exiftool -all= photo.jpg'"
+            ]
+          }
+        },
+        {
+          "title": "Disable Bluetooth When Not Needed",
+          "level": "beginner",
+          "why": "Reduces wireless attack surface.",
+          "steps": {
+            "ios": [
+              "Swipe down Control Center",
+              "Tap Bluetooth icon"
+            ]
+          }
+        },
+        {
+          "title": "Use Temporary Email Addresses",
+          "level": "beginner",
+          "why": "Prevents spam/identity linking.",
+          "steps": {
+            "web": [
+              "Go to a temp email service",
+              "Use disposable address for signups"
+            ]
+          }
+        },
+        {
+          "title": "Avoid Reusing Passwords",
+          "level": "advanced",
+          "why": "Prevents chain compromises.",
+          "steps": {
+            "password_manager": [
+              "Generate new unique passwords for each site"
+            ]
+          }
+        },
+        {
+          "title": "Enable USB Restriction Mode",
+          "level": "advanced",
+          "why": "Disables untrusted USB devices.",
+          "steps": {
+            "ios": [
+              "Open Settings",
+              "Open Face ID & Passcode",
+              "Disable USB accessories"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

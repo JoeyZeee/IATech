@@ -1,0 +1,21 @@
+# Bluehost/cPanel
+
+.well-known/
+cgi-bin/
+perl5/
+access-logs/
+error_log
+.htpasswd
+.htaccess*
+
+# General Sec
+.env
+.env.local
+.env.*.local
+config.php
+wp-config.php
+
+# OS Metadata
+.DS_Store
+Thumbs.db
+ethumbs.db

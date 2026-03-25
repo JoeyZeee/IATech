@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy & Security Guide</title>
+  <meta name="description" content="Minimalist actionable privacy & security guide." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, sans-serif;
+      height: 100%;
+      background: transparent;
+    }
+
+    :root {
+      --bg: rgba(255,255,255,0.92);
+      --fg: #1a1a1a;
+      --border: #e5e5e5;
+      --muted: #666;
+      --panel: rgba(245,245,245,0.85);
+      --accent: #005fcc;
+      --accent-fg: #ffffff;
+      --search-bg: rgba(255,255,255,0.7);
+
+      --lvl-beginner-bg: #e0f3ff;
+      --lvl-beginner-fg: #005fcc;
+      --lvl-intermediate-bg: #fff7e0;
+      --lvl-intermediate-fg: #a67a00;
+      --lvl-advanced-bg: #ffe0e0;
+      --lvl-advanced-fg: #a40000;
+    }
+
+    html.dark {
+      --bg: rgba(15,15,15,0.92);
+      --fg: #e3e3e3;
+      --border: #2a2a2a;
+      --muted: #8a8a8a;
+      --panel: rgba(28,28,28,0.85);
+      --accent: #3aa7fc;
+      --accent-fg: #07141f;
+      --search-bg: rgba(40,40,40,0.65);
+
+      --lvl-beginner-bg: #002e50;
+      --lvl-beginner-fg: #9edaff;
+      --lvl-intermediate-bg: #4a3900;
+      --lvl-intermediate-fg: #ffd966;
+      --lvl-advanced-bg: #4a0000;
+      --lvl-advanced-fg: #ff9d9d;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* VANTA background container */
+    #bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      opacity: 0.34;
+      pointer-events: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Search bar */
+    .search-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    #search {
+      width: 280px;
+      padding: 9px 14px 9px 34px;
+      border-radius: 999px;
+      background: var(--search-bg);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-size: 14px;
+      outline: none;
+      backdrop-filter: blur(6px);
+      transition: all 0.2s ease;
+    }
+
+    #search::placeholder {
+      color: var(--muted);
+      opacity: 0.85;
+    }
+
+    #search:focus {
+      border-color: var(--accent);
+      background: var(--search-bg);
+      color: var(--fg);
+    }
+
+    /* Theme toggle – emoji only */
+    #themeToggle {
+      font-size: 20px;
+      line-height: 1;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.05s;
+    }
+
+    #themeToggle:hover {
+      background: var(--accent);
+      color: var(--accent-fg);
+      border-color: var(--accent);
+    }
+
+    #themeToggle:active {
+      transform: scale(0.97);
+    }
+
+    /* Level controls */
+    .level-group {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .level-btn {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      transition: all 0.15s ease;
+      background: transparent;
+    }
+
+    .level-btn[aria-pressed="true"] {
+      background: var(--accent);
+      color: var(--accent-fg);
+      border-color: var(--accent);
+    }
+
+    .level-btn[aria-pressed="false"] {
+      color: var(--muted);
+    }
+
+    /* Category boxes */
+    .category {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      backdrop-filter: blur(6px);
+    }
+
+    summary {
+      padding: 14px 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      font-weight: 600;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .summary-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .chev {
+      font-size: 16px;
+      transition: transform 0.2s ease;
+      transform: rotate(90deg);
+      opacity: 0.8;
+    }
+
+    details[open] .chev {
+      transform: rotate(270deg);
+    }
+
+    .details-content {
+      border-top: 1px solid var(--border);
+      padding: 16px;
+      animation: fadeIn 0.22s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Action level tags */
+    .level-tag {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    .level-beginner    { background: var(--lvl-beginner-bg); color: var(--lvl-beginner-fg); }
+    .level-intermediate { background: var(--lvl-intermediate-bg); color: var(--lvl-intermediate-fg); }
+    .level-advanced    { background: var(--lvl-advanced-bg); color: var(--lvl-advanced-fg); }
+
+    .action {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .action:last-child {
+      border-bottom: none;
+    }
+
+    .action h4 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .action p {
+      margin: 6px 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 700px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .platform {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px;
+    }
+
+    .platform h5 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .platform ol {
+      margin: 0;
+      padding-left: 16px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="bg"></div>
+
+<header>
+  <div class="header-inner">
+    <div style="font-weight:600; font-size:15px;">Privacy & Security Guide</div>
+
+    <div style="display:flex; gap:12px; align-items:center;">
+      <div class="search-wrap">
+        <span class="search-icon">🔎</span>
+        <input id="search" placeholder="Search…">
+      </div>
+
+      <div class="level-group">
+        <button class="level-btn" data-level="beginner" aria-pressed="true">BEGINNER</button>
+        <button class="level-btn" data-level="intermediate" aria-pressed="true">INTERMEDIATE</button>
+        <button class="level-btn" data-level="advanced" aria-pressed="true">ADVANCED</button>
+      </div>
+
+      <button id="themeToggle" aria-label="Toggle theme">🌞</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <h1 class="title">Actionable Privacy & Security</h1>
+  <p class="muted">A practical, minimal guide built by Irene and Alex (SYBAC).</p>
+
+  <div id="filterStatus" class="muted" style="margin-top:6px;"></div>
+  <div id="stats" class="muted" style="margin-bottom:20px;"></div>
+
+  <section id="app" style="display:grid; gap:20px;" aria-live="polite"></section>
+</main>
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
