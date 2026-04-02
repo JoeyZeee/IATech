@@ -1,5 +1,30 @@
 [
     {
+        "competition": "2026 LooCon CTF Competition",
+        "position": "1st",
+        "colorClass": "bg-gold"
+    },
+    {
+        "competition": "Lockheed Martin's CyberQuest 2026",
+        "position": "3rd",
+        "colorClass": "bg-yellow-800"
+    },
+    {
+        "competition": "ISU's 2026 International Cyber Defense Competition",
+        "position": "1st",
+        "colorClass": "bg-gold"
+    },
+    {
+        "competition": "State CyberPatriot Open Platinum Division",
+        "position": "1st",
+        "colorClass": "bg-gold"
+    },
+    {
+        "competition": "Fall 2025 National Cyber League (CyberSkyline) Team Competition",
+        "position": "Top 1%",
+        "colorClass": "bg-gold"
+    },
+    {
         "competition": "2025 LooCon CTF Competition",
         "position": "1st",
         "colorClass": "bg-gold"
@@ -45,4 +70,3 @@
         "colorClass": "bg-gold"
     }
 ]
-
